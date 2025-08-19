@@ -71,11 +71,39 @@
                 tierras y detener la pérdida de biodiversidad.
               </p>
             </div>
-            <div class="image">
-              <img
-                src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Bosque"
-              />
+            <div class="carrusel">
+              <div class="carrusel-contenedor">
+                <div class="carrusel-slide">
+                  <img
+                    src="Images/ParqueNacionalBraulioCarrillo.webp"
+                    alt="Parque Nacional Braulio Carrillo"
+                    class="carrusel-imagen"
+                  />
+                </div>
+                <div class="carrusel-slide">
+                  <img
+                    src="Images/Juguar.jpg"
+                    alt="Paisaje"
+                    class="carrusel-imagen"
+                  />
+                </div>
+                <div class="carrusel-slide">
+                  <img
+                    src="Images/Guanacaste.jpg"
+                    alt="Naturaleza"
+                    class="carrusel-imagen"
+                  />
+                </div>
+              </div>
+
+              <button class="carrusel-boton anterior">&#10094;</button>
+              <button class="carrusel-boton siguiente">&#10095;</button>
+
+              <div class="carrusel-puntos">
+                <span class="punto activo"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -266,16 +294,77 @@
               </li>
             </ul>
           </div>
-          <!-- <div class="footer-section">
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const contenedor = document.querySelector(".carrusel-contenedor");
+              const slides = document.querySelectorAll(".carrusel-slide");
+              const puntos = document.querySelectorAll(".punto");
+              const btnAnterior = document.querySelector(".anterior");
+              const btnSiguiente = document.querySelector(".siguiente");
+
+              let indiceActual = 0;
+              const totalSlides = slides.length;
+
+              function actualizarCarrusel() {
+                contenedor.style.transform = `translateX(-${
+                  indiceActual * 100
+                }%)`;
+
+                // Actualizar puntos
+                puntos.forEach((punto, index) => {
+                  punto.classList.toggle("activo", index === indiceActual);
+                });
+              }
+
+              function siguienteSlide() {
+                indiceActual = (indiceActual + 1) % totalSlides;
+                actualizarCarrusel();
+              }
+
+              function anteriorSlide() {
+                indiceActual = (indiceActual - 1 + totalSlides) % totalSlides;
+                actualizarCarrusel();
+              }
+
+              // Event listeners
+              btnSiguiente.addEventListener("click", siguienteSlide);
+              btnAnterior.addEventListener("click", anteriorSlide);
+
+              // Puntos navegación
+              puntos.forEach((punto, index) => {
+                punto.addEventListener("click", () => {
+                  indiceActual = index;
+                  actualizarCarrusel();
+                });
+              });
+            });
+          </script>
+
+          <div class="footer-section">
             <h3>Contacto</h3>
-            <p><i class="fas fa-envelope"></i> info@ods15.org</p>
+
             <div class="socials">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a
+                href="https://www.facebook.com/PlataformaOSC.ODS/?locale=es_LA"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook"></i
+              ></a>
+
+              <a
+                href="https://www.instagram.com/promotoresods/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@UNetxea"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-youtube"></i
+              ></a>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
