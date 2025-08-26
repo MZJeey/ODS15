@@ -71,39 +71,13 @@
                 tierras y detener la pérdida de biodiversidad.
               </p>
             </div>
-            <div class="carrusel">
-              <div class="carrusel-contenedor">
-                <div class="carrusel-slide">
-                  <img
-                    src="Images/ParqueNacionalBraulioCarrillo.webp"
-                    alt="Parque Nacional Braulio Carrillo"
-                    class="carrusel-imagen"
-                  />
-                </div>
-                <div class="carrusel-slide">
-                  <img
-                    src="Images/Juguar.jpg"
-                    alt="Paisaje"
-                    class="carrusel-imagen"
-                  />
-                </div>
-                <div class="carrusel-slide">
-                  <img
-                    src="Images/Guanacaste.jpg"
-                    alt="Naturaleza"
-                    class="carrusel-imagen"
-                  />
-                </div>
-              </div>
+            <div class="video">
+              <video width="600" controls autoplay loop>
 
-              <button class="carrusel-boton anterior">&#10094;</button>
-              <button class="carrusel-boton siguiente">&#10095;</button>
+                <source src="/videos/Costa_Rica ‐ Hecho con Clipchamp.mp4"/>
 
-              <div class="carrusel-puntos">
-                <span class="punto activo"></span>
-                <span class="punto"></span>
-                <span class="punto"></span>
-              </div>
+              </video> 
+
             </div>
           </div>
         </div>
@@ -238,6 +212,17 @@
               >
             </div>
             <div class="resource">
+              <h3><i class="fas fa-book"></i> Presentacion ODS 15</h3>
+              <p>Presentacion sobre la conservación de ecosistemas terrestres</p>
+              <a
+                href="https://www.canva.com/design/DAGxAqTRqzU/UKpRfkVzLrp7ZdH2wPWpNQ/edit?ui=eyJBIjp7fX0"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitar</a
+              >
+            </div>
+            <div class="resource">
               <h3><i class="fas fa-hands-helping"></i> Organizaciones</h3>
               <p>ONGs trabajando en conservación de ecosistemas</p>
               <a
@@ -294,77 +279,16 @@
               </li>
             </ul>
           </div>
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const contenedor = document.querySelector(".carrusel-contenedor");
-              const slides = document.querySelectorAll(".carrusel-slide");
-              const puntos = document.querySelectorAll(".punto");
-              const btnAnterior = document.querySelector(".anterior");
-              const btnSiguiente = document.querySelector(".siguiente");
-
-              let indiceActual = 0;
-              const totalSlides = slides.length;
-
-              function actualizarCarrusel() {
-                contenedor.style.transform = `translateX(-${
-                  indiceActual * 100
-                }%)`;
-
-                // Actualizar puntos
-                puntos.forEach((punto, index) => {
-                  punto.classList.toggle("activo", index === indiceActual);
-                });
-              }
-
-              function siguienteSlide() {
-                indiceActual = (indiceActual + 1) % totalSlides;
-                actualizarCarrusel();
-              }
-
-              function anteriorSlide() {
-                indiceActual = (indiceActual - 1 + totalSlides) % totalSlides;
-                actualizarCarrusel();
-              }
-
-              // Event listeners
-              btnSiguiente.addEventListener("click", siguienteSlide);
-              btnAnterior.addEventListener("click", anteriorSlide);
-
-              // Puntos navegación
-              puntos.forEach((punto, index) => {
-                punto.addEventListener("click", () => {
-                  indiceActual = index;
-                  actualizarCarrusel();
-                });
-              });
-            });
-          </script>
-
-          <div class="footer-section">
+          <!-- <div class="footer-section">
             <h3>Contacto</h3>
-
+            <p><i class="fas fa-envelope"></i> info@ods15.org</p>
             <div class="socials">
-              <a
-                href="https://www.facebook.com/PlataformaOSC.ODS/?locale=es_LA"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fab fa-facebook"></i
-              ></a>
-
-              <a
-                href="https://www.instagram.com/promotoresods/"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a
-                href="https://www.youtube.com/@UNetxea"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fab fa-youtube"></i
-              ></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="footer-bottom">
