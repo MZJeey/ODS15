@@ -288,7 +288,7 @@ nav ul li a:hover {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: space-around;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
 }
 
